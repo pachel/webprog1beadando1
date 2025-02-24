@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Táblázat CRUD</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h2>Táblázat kezelése</h2>
+<input type="text" id="search" placeholder="Keresés..." onkeyup="searchTable()">
+<table id="dataTable">
+    <thead>
+    <tr>
+        <th onclick="sortTable(0)">Név</th>
+        <th onclick="sortTable(1)">Kor</th>
+        <th onclick="sortTable(2)">Város</th>
+        <th>Műveletek</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody">
+    <!-- Dinamikusan generált sorok -->
+    </tbody>
+</table>
+<h3>Új bejegyzés</h3>
+<input type="text" id="name" placeholder="Név" required>
+<input type="number" id="age" placeholder="Kor" required>
+<input type="text" id="city" placeholder="Város" required>
+<button onclick="addRow()">Hozzáadás</button>
+
+<script>
+    function addRow() {
+        let name = document.getElementById("name").value;
+        let age = document.getElementById("age").value;
+        let city = document.getElementById("city").value;
+
+        if (!name || !age || !city) {
+            alert("Minden mezőt ki kell tölteni!");
+            return;
+        }
+
+        let table = document.getElementById("tableBody");
+        let row = table.insertRow();
+
+        row.insertCell(0).innerText = name;
+        row.insertCell(1).innerText = age;
+        row.insertCell(2).innerText = city;
+        let actions = row.insertCell(3);
+        actions.innerHTML = '<button onclick="editRow(this)">Szerkesztés</button> <button onclick="deleteRow(this)">Törlés</button>';
+    }
+
+    function deleteRow(button) {
+        let row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+
+    function editRow(button) {
+        let row = button.parentNode.parentNode;
+        let name = row.cells[0].innerText;
+        let age = row.cells[1].innerText;
+        let city = row.cells[2].innerText;
+
+        let newName = prompt("Új név:", name);
+        let newAge = prompt("Új kor:", age);
+        let newCity = prompt("Új város:", city);
+
+        if (newName && newAge && newCity) {
+            row.cells[0].innerText = newName;
+            row.cells[1].innerText = newAge;
+            row.cells[2].innerText = newCity;
+        }
+    }
+
+    function sortTable(n) {
+        let table = document.getElementById("dataTable");
+        let rows = Array.from(table.rows).slice(1);
+        let ascending = table.getAttribute("data-sort") === "asc";
+        table.setAttribute("data-sort", ascending ? "desc" : "asc");
+        rows.sort((a, b) => ascending ? a.cells[n].innerText.localeCompare(b.cells[n].innerText) : b.cells[n].innerText.localeCompare(a.cells[n].innerText));
+        rows.forEach(row => table.appendChild(row));
+    }
+
+    function searchTable() {
+        let input = document.getElementById("search").value.toLowerCase();
+        let rows = document.getElementById("tableBody").rows;
+        for (let row of rows) {
+            row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
+        }
+    }
+</script>
+</body>
+</html>

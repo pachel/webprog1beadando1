@@ -23,7 +23,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <button class="form-control btn btn-success">Elküld</button>
+            <button class="form-control btn btn-info">Elküld</button>
         </div>
     </div>
 </form>

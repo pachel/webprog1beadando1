@@ -3,6 +3,7 @@
     "php": "^8",
     "pachel/dbclass": "dev-master",
     "gumlet/php-image-resize": "^2.0",
-    "twbs/bootstrap": "^5.3"
+    "twbs/bootstrap": "^5.3",
+    "components/font-awesome": "^6.5"
   }
 }

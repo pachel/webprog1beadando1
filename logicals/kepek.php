@@ -7,8 +7,7 @@ try {
         mkdir(IMG_DIR);
     }
 
-    if(isset($_FILES["kepek"]) && isset($_SESSION["login"])){
-
+    if(isset($_FILES["kepek"]) && !empty($_FILES["kepek"]) && isset($_SESSION["login"])){
         foreach ($_FILES AS $kep){
             if(preg_match("/\.[a-z]+$/i",$kep["name"],$preg)) {
                 $nagy = md5($kep["tmp_name"]).$preg[0];

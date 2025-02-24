@@ -6,6 +6,8 @@
 	<meta charset="utf-8">
 	<title><?= $ablakcim['cim'] . ( (isset($ablakcim['mottó'])) ? ('|' . $ablakcim['mottó']) : '' ) ?></title>
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="vendor/components/font-awesome/css/all.css">
+    <link rel="stylesheet" href="styles/stilus.css">
 	<?php if(file_exists('./styles/'.$keres['fajl'].'.css')) { ?><link rel="stylesheet" href="./styles/<?= $keres['fajl']?>.css" type="text/css"><?php } ?>
 </head>
 <body>
@@ -15,10 +17,10 @@
 		<h1><?= $fejlec['cim'] ?></h1>
 
 	</header>-->
-    <nav class="navbar navbar-expand-lg bg-info">
+    <nav class="navbar navbar-expand-lg bg-nav" data-bs-theme="dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="images/<?=$fejlec["kepforras"]?>" alt="Bootstrap" width="30" height="24">
+                <i class="fa-solid fa-graduation-cap"></i>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -35,13 +37,14 @@
                     <?php } ?>
                     <!--<span class="badge text-bg-danger rounded-pill">4</span>-->
                 </ul>
-                <?php if (isset($fejlec['motto'])) { ?><h2><?= $fejlec['motto'] ?></h2><?php } ?>
+                <span class="navbar-text">
                 <?php if(isset($_SESSION['login'])) { ?>Bejlentkezve: <strong><?= $_SESSION['csn']." ".$_SESSION['un']." (".$_SESSION['login'].")" ?></strong><?php } ?>
+                </span>
             </div>
         </div>
     </nav>
 
-    <section class="container">
+    <section class="container mt-3 mb-3">
 
 
         <div id="content">
