@@ -10,6 +10,7 @@
                 <input type="hidden" name="id" value="<?=$_SESSION["id"]?>">
                 <input type="text" name="nev" class="form-control" value="<?= $_SESSION['csn'] . " " . $_SESSION['un'] ?>" readonly>
             <?php else: ?>
+
                 <label>Az Ön neve:</label>
                 <input type="text" name="nev" class="form-control" placeholder="Írja be a nevét">
             <?php endif; ?>
