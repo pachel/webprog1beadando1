@@ -10,7 +10,7 @@ foreach ($videok AS $video){
         continue;
     }
     $mime = mime_content_type($path.$video);
-    if(!preg_match("/video/",$mime)){
+    if(!str_contains($mime, "video")){
         continue;
     }
     $megjeleniteni[] = [
