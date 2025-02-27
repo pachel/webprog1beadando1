@@ -7,6 +7,7 @@ class validator {
     }
 
 
+
     ujMezo(name, text) {
         this.mezok.push({
                 name: name,
