@@ -5,9 +5,6 @@ class validator {
     constructor(form) {
         this.form = form;
     }
-
-
-
     ujMezo(name, text) {
         this.mezok.push({
                 name: name,
