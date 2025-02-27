@@ -4,7 +4,7 @@ class validator {
 
     constructor(form) {
         this.form = form;
-    }
+    }git config
     ujMezo(name, text) {
         this.mezok.push({
                 name: name,
