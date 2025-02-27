@@ -26,6 +26,8 @@ $oldalak = array(
 	'kepek' => array('fajl' => 'kepek', 'szoveg' => 'Képek', 'menun' => array(1,1)),
 	'uzenetek' => array('fajl' => 'uzenetek', 'szoveg' => 'Üzenetek', 'menun' => array(0,1)),
 	'kapcsolat' => array('fajl' => 'kapcsolat', 'szoveg' => 'Kapcsolat', 'menun' => array(1,1)),
+//	'tesztgyar' => array('fajl' => 'tesztgyar', 'szoveg' => 'Tesztgyár', 'menun' => array(0,1)),
+//	'tesztek' => array('fajl' => 'tesztek', 'szoveg' => 'Tesztek', 'menun' => array(1,1)),
 
     'belepes' => array('fajl' => 'belepes', 'szoveg' => 'Belépés', 'menun' => array(1,0)),
     'kilepes' => array('fajl' => 'kilepes', 'szoveg' => 'Kilépés', 'menun' => array(0,1)),
