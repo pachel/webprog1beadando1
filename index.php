@@ -5,6 +5,14 @@ use Pachel\dbClass;
 
 require __DIR__."/vendor/autoload.php";
 require __DIR__."/includes/config.inc.php";
+
+if(file_exists(__DIR__."/includes/dev_db.conf")){
+    require __DIR__."/includes/dev_db.conf";
+}
+else{
+    require __DIR__."/includes/db.conf";
+}
+dbClass::instance()->settings()->connect($db_config);
 /**
  * @var dbClass $db
  */

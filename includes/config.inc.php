@@ -35,17 +35,6 @@ $oldalak = array(
     'regisztral' => array('fajl' => 'regisztral', 'szoveg' => '', 'menun' => array(0,0))
 );
 $hiba_oldal = array ('fajl' => '404', 'szoveg' => 'A keresett oldal nem található!');
-$db_config = [
-    "prename"=>"",
-    "server"=>"localhost",
-    "dbname"=>"gyakorlat7",
-    "username"=>"root",
-    "password"=>"",
-    "queryClassDir" => __DIR__ . "/../tpl/queries",
-    "modelDir" => __DIR__ . "/../src/Models",
-    "default_result_mode" => dbClass::DB_RESULT_TYPE_ARRAY
-];
-dbClass::instance()->settings()->connect($db_config);
 
 define("IMG_DIR",__DIR__."/../images/kepek/");
 define("IMG_SORT_DIR","images/kepek/");
