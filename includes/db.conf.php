@@ -7,5 +7,5 @@ $db_config = [
     "password"=>"beadando1",
     "queryClassDir" => __DIR__ . "/../tpl/queries",
     "modelDir" => __DIR__ . "/../src/Models",
-    "default_result_mode" => dbClass::DB_RESULT_TYPE_ARRAY
+    "default_result_mode" => \Pachel\dbClass::DB_RESULT_TYPE_ARRAY
 ];
