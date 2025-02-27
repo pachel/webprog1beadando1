@@ -10,6 +10,9 @@ try {
     if(isset($_FILES["kepek"]) && !empty($_FILES["kepek"]) && isset($_SESSION["login"])){
         foreach ($_FILES AS $kep){
             if(preg_match("/\.[a-z]+$/i",$kep["name"],$preg)) {
+                if(!preg_match("/image/i",$kep["type"])) {
+                    throw new Exception("Nem képformátum!");
+                }
                 $nagy = md5($kep["tmp_name"]).$preg[0];
                 copy($kep["tmp_name"], IMG_DIR.$nagy);
             }

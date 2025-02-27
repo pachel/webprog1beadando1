@@ -6,6 +6,7 @@ class validator {
         this.form = form;
     }
 
+
     ujMezo(name, text) {
         this.mezok.push({
                 name: name,
@@ -20,6 +21,7 @@ class validator {
             let nev = document.forms[this.form][this.mezok[i].name].value;
             if (nev == "") {
                 alert("A " + this.mezok[i].text + " mező kitöltése kötelező");
+                document.forms[this.form][this.mezok[i].name].focus();
                 return false;
             }
         }

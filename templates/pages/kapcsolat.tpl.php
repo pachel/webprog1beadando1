@@ -11,7 +11,6 @@
                 <input type="text" name="nev" class="form-control"
                        value="<?= $_SESSION['csn'] . " " . $_SESSION['un'] ?>" readonly>
             <?php else: ?>
-
                 <label>Az Ön neve:</label>
                 <input type="text" name="nev" class="form-control" placeholder="Írja be a nevét">
             <?php endif; ?>
@@ -29,7 +28,7 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="templates/validator.js"></script>
+<script type="text/javascript" src="styles/validator.js"></script>
 <script type="text/javascript">
     function validateForm() {
         let v = new validator("kapcsolat");
