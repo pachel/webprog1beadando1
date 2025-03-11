@@ -27,6 +27,10 @@ try {
         if($fajl == "." || $fajl == ".." || preg_match("/^sm_/",$fajl)){
             continue;
         }
+        $mime = mime_content_type(IMG_DIR.$fajl);
+        if(!preg_match("/image/",$mime)){
+            continue;
+        }
         $kicsi = meretez($fajl);
         $kepek[] = [
             "kep"=>IMG_SORT_DIR.$fajl,

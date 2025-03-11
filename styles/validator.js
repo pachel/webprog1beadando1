@@ -12,7 +12,6 @@ class validator {
             }
         );
     }
-
     validate() {
         let i;
         for (i in this.mezok) {
