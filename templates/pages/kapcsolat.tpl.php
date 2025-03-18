@@ -7,7 +7,6 @@
         <div class="col">
             <?php if (isset($_SESSION["login"])): ?>
                 <label>Az Ön neve (bejelentkezett felhasználó):</label>
-                <input type="hidden" name="id" value="<?= $_SESSION["id"] ?>">
                 <input type="text" name="nev" class="form-control"
                        value="<?= $_SESSION['csn'] . " " . $_SESSION['un'] ?>" readonly>
             <?php else: ?>

@@ -1,5 +1,6 @@
 <?php
-$sql = <<<EOT
+if(isset($_SESSION["login"])) {
+    $sql = <<<EOT
 SELECT 
     u.szoveg,
     u.datum,
@@ -9,4 +10,5 @@ FROM
     uzenetek u LEFT JOIN felhasznalok f ON f.id=u.id_felhasznalok 
 ORDER BY u.datum DESC
 EOT;
-$uzenetek = $db->query($sql)->rows();
+    $uzenetek = $db->query($sql)->rows();
+}

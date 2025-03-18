@@ -1,9 +1,9 @@
 <?php
 if(isset($_POST) && !empty($_POST["szoveg"]) && !empty($_POST["nev"])){
     //Ha be van jelentkezve
-    if(isset($_POST["id"]) && is_numeric($_POST["id"])){
+    if(isset($_SESSION['id']) && is_numeric($_SESSION['id'])){
         $data = [
-          "id_felhasznalok" => $_POST["id"],
+          "id_felhasznalok" => $_SESSION['id'],
           "szoveg"=>$_POST["szoveg"]
         ];
     }

@@ -6,13 +6,6 @@ $ablakcim = array(
     'cim' => 'Mini honlap Kft.',
 );
 
-$fejlec = array(
-    'kepforras' => 'logo.png',
-    'kepalt' => 'logo',
-	'cim' => 'Mini honlap',
-	'motto' => ''
-);
-
 $lablec = array(
     'copyright' => 'Copyright '.date("Y").'.',
     'ceg' => 'Mini honlap Kft.'
